@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: server
+    ports:
+      - "80:80"
+    restart: "unless-stopped"
+    depends_on:
+      - app
+    networks:
+      - app
+
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: build
+    ports:
+      - "4200:4500"
+    networks:
+      - app
+
+
+networks:
+  app:
+    driver: bridge
