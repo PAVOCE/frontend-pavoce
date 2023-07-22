@@ -11,12 +11,24 @@ import { map, shareReplay } from 'rxjs/operators';
 export class SidebarComponent implements OnInit{
   @Input() template: TemplateRef<any> | any;
   private breakpointObserver = inject(BreakpointObserver);
+  navItems: any[] = [
+    {
+      name: 'Dashboard',
+      link: '',
+      active: true,
+      icon: ''
+    },
+    {
+      name: 'Invoice',
+      link: 'invoice',
+      active: false,
+      icon: ''
+    }
+  ];
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   constructor() {}
-
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(

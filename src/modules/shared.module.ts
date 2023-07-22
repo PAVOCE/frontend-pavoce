@@ -25,6 +25,7 @@ import {SidebarComponent} from "../app/components/sidebar/sidebar.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {CommonModule} from "@angular/common";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 const imports: any[] = [
  MatButtonModule,
@@ -57,9 +58,12 @@ const imports: any[] = [
 
 const declarations:any[] = [SidebarComponent];
 @NgModule({
-  imports,
+  imports: [
+    imports,
+    RouterLink,
+    RouterLinkActive
+  ],
   declarations,
   exports: [...imports, ...declarations]
-  // exports: [...imports]
 })
 export class SharedModule{}

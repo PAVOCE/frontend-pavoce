@@ -1,9 +1,12 @@
+@import "../../../assets/palette/_colors";
+
 .sidenav-container {
   height: 100%;
 }
 
 .sidenav {
-  width: 300px;
+  width: 18%;
+  background: $white200;
 }
 
 .sidenav .mat-toolbar {
