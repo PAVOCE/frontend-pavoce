@@ -16,13 +16,13 @@ export class SidebarComponent implements OnInit{
       name: 'Dashboard',
       link: '',
       active: true,
-      icon: ''
+      icon: 'grid_view'
     },
     {
       name: 'Invoice',
       link: 'invoice',
       active: false,
-      icon: ''
+      icon: 'description'
     }
   ];
 
